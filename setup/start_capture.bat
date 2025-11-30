@@ -1,0 +1,6 @@
+\
+        @echo off
+        echo Starting mitmproxy with Gemini logger...
+        start "" mitmweb -s addon_raw_logger.py
+        echo Opening Gemini...
+        start "" https://gemini.google.com/
